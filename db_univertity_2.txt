@@ -55,7 +55,7 @@ WHERE `departments`.`id` = '5';
 
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. 
 
-SELECT `student_id` AS `student_code`, `exam_id` AS `exam_code` ,COUNT(`exam_id`) AS `try`
+SELECT `student_id` AS `student_code`, `exam_id` AS `exam_code` ,COUNT(`exam_id`) AS `try`, MAX(`vote`) AS `best_vote`, MIN(`vote`) AS `worst_vote`
 FROM `exam_student`
 GROUP BY `student_id`, `exam_id`;
 
