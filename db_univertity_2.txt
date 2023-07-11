@@ -60,11 +60,15 @@ WHERE `departments`.`id` = '5';
 
 1. Contare quanti iscritti ci sono stati ogni anno
 
+SELECT COUNT(id) , YEAR(`students`.`enrolment_date`) AS `year`
+FROM `students` 
+GROUP BY year;
+
+2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
 SELECT COUNT(id) , `teachers`.`office_address`
 FROM `teachers` 
 GROUP BY `teachers`.`office_address`;
-
-2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
