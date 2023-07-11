@@ -53,7 +53,13 @@ JOIN`departments` ON `departments`.`id` = `degrees`.`department_id`
 WHERE `departments`.`id` = '5';
 
 
-7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
+7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. 
+
+SELECT `student_id` AS `student_code`, `exam_id` AS `exam_code` ,COUNT(`exam_id`) AS `try`
+FROM `exam_student`
+GROUP BY `student_id`, `exam_id`;
+
+Successivamente, filtrare i tentativi con voto minimo 18.
 
 
 -- GROUP --
