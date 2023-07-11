@@ -61,6 +61,10 @@ GROUP BY `student_id`, `exam_id`;
 
 Successivamente, filtrare i tentativi con voto minimo 18.
 
+SELECT `student_id` AS `student_code`, `exam_id` AS `exam_code` ,COUNT(`exam_id`) AS `try`, MAX(`vote`) AS `best_vote`, MIN(`vote`) AS `worst_vote`
+FROM `exam_student`
+WHERE `exam_student`.`vote` >= '18'
+GROUP BY `student_id`, `exam_id` ;
 
 -- GROUP --
 
